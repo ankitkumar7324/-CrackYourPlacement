@@ -1,4 +1,3 @@
-import java.util.*;
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -25,11 +24,11 @@ class Solution {
         while(!q.isEmpty()){
             int len = q.size();
             List<Integer> sublist = new ArrayList<>();
-            for(int i=0 ;i<len;i++){
+            for(int i=0;i<len;i++){
                 TreeNode curr = q.peek();
                 q.remove();
                 sublist.add(curr.val);
-                if(curr.left!= null){
+                if(curr.left!=null){
                     q.add(curr.left);
                 }
                 if(curr.right!=null){
