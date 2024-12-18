@@ -22,14 +22,14 @@ class Solution {
         }
         st.push(root);
         while(!st.isEmpty()){
-            TreeNode curr = st.peek();
+            TreeNode temp = st.peek();
+            ans.add(temp.val);
             st.pop();
-            ans.add(curr.val);
-            if(curr.right!=null){
-                st.push(curr.right);
+            if(temp.right!=null){
+                st.push(temp.right);
             }
-            if(curr.left!=null){
-                st.push(curr.left);
+            if(temp.left!=null){
+                st.push(temp.left);
             }
         }
         return ans;
