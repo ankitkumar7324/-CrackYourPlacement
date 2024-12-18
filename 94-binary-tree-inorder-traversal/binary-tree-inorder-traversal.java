@@ -15,16 +15,16 @@
  */
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
-        ArrayList<Integer> ans = new ArrayList<>();
+        ArrayList<Integer> ans= new ArrayList<>();
         Stack<TreeNode> st = new Stack<>();
-        if(root == null){
+        if(root ==null){
             return ans;
         }
         TreeNode temp = root;
         while(true){
             if(temp!=null){
                 st.push(temp);
-                temp = temp.left;
+                temp=temp.left;
             }
             else{
                 if(st.isEmpty()){
@@ -32,7 +32,7 @@ class Solution {
                 }
                 temp = st.pop();
                 ans.add(temp.val);
-                temp = temp.right;
+                temp=temp.right;
             }
         }
         return ans;
