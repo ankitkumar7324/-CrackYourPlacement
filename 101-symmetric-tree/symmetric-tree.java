@@ -27,9 +27,7 @@ class Solution {
         if(root == null){
             return true;
         }
-        if(root.left == null && root.right == null){
-            return true;
-        }
+        
         return helper(root.left,root.right);
     }
 }
