@@ -25,7 +25,8 @@ class Solution {
                 
             }
         }
-        int cnt=0;
+        if(cnt1==0) return 0;
+        int time=0;
         while(!q.isEmpty()){
             int size = q.size();
             boolean anyfreshrotten = false;
@@ -44,11 +45,11 @@ class Solution {
                     }
                 }
             }
-            if(anyfreshrotten) cnt++;
+            if(anyfreshrotten) time++;
         }
         if(cnt1>0){
             return -1;
         }
-        return cnt;
+        return time;
     }
 }
