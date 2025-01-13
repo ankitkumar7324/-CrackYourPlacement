@@ -4,31 +4,36 @@ class Solution {
         if (n % 2 != 0) {
             return false;
         }
-
-        int openCount = 0;
-        for (int i = 0; i < n; i++) {
-            if (s.charAt(i) == '(' || locked.charAt(i) == '0') {
-                openCount++;
-            } else {
-                openCount--;
+        int opening = 0;
+        int closing = 0;
+        int wildcard = 0;
+        for(int i=0;i<n;i++){
+            if(locked.charAt(i) == '0'){
+                wildcard++;
+            }else if(s.charAt(i)=='('){
+                opening++;
+            }else{
+                closing++;
             }
-            if (openCount < 0) {
+            if(wildcard<(closing-opening)){
                 return false;
             }
         }
-
-        int closeCount = 0;
-        for (int i = n - 1; i >= 0; i--) {
-            if (s.charAt(i) == ')' || locked.charAt(i) == '0') {
-                closeCount++;
-            } else {
-                closeCount--;
+        opening = 0;
+        closing = 0;
+        wildcard = 0;
+        for(int i=n-1;i>=0;i--){
+            if(locked.charAt(i) == '0'){
+                wildcard++;
+            }else if(s.charAt(i)=='('){
+                opening++;
+            }else{
+                closing++;
             }
-            if (closeCount < 0) {
+            if(wildcard<(opening-closing)){
                 return false;
             }
         }
-
         return true;
     }
 }
