@@ -1,23 +1,12 @@
 class Solution {
     public boolean isArraySpecial(int[] nums) {
-        if(nums.length <= 1)
-        {
-            return true;
-        }
-        int i=0;
-        
-        while(i<nums.length-1)
-        {
-            int j=i+1;
-            if(nums[i]%2==0 && nums[j]%2==0)
-            {
+        int n = nums.length;
+        for(int i=0;i<n-1;i++){
+            int a = nums[i]%2;
+            int b = nums[i+1]%2;
+            if(a==b){
                 return false;
             }
-            else if(nums[i]%2!=0 && nums[j]%2!=0)
-            {
-                return false;
-            }
-            i++;
         }
         return true;
     }
